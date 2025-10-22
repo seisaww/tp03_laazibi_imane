@@ -93,7 +93,6 @@ editPollution(pollution: Pollution): void {
   }
 
     resetFilters(): void {
-    // 1. Réinitialise l'objet des critères
     this.filterCriteria = {
       type: '',
       lieu: '',

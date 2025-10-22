@@ -1,5 +1,3 @@
-// Fichier : src/app/components/pollution-form/pollution-from.ts
-
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -21,7 +19,6 @@ export class PollutionFrom implements OnInit {
   @Output() pollutionDeclaree = new EventEmitter<Pollution>();
   @Output() annulerModification = new EventEmitter<void>();
 
-  // RENOMMÉ : "pollutionForm" s'appelle maintenant "formulaire"
   formulaire: FormGroup; 
   
   isEditMode = false;
@@ -30,7 +27,6 @@ export class PollutionFrom implements OnInit {
     private fb: FormBuilder,
     private pollutionService: PollutionService
   ) {
-    // Initialise "formulaire"
     this.formulaire = this.fb.group({
       id: new FormControl<string | null>(null),
       titre: new FormControl<string>('', Validators.required),
@@ -52,7 +48,6 @@ export class PollutionFrom implements OnInit {
     }
   }
 
-  // RENOMMÉ : "onSubmit" s'appelle maintenant "send"
   send(): void {
     if (this.formulaire.invalid) {
       return; 
@@ -96,7 +91,6 @@ export class PollutionFrom implements OnInit {
   }
 
   resetForm(): void {
-    // Réinitialise "formulaire"
     this.formulaire.reset();
   }
 

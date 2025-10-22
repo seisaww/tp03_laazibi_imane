@@ -30,18 +30,15 @@ export class PollutionDetail implements OnInit {
     }
   }
 
-// ...
 loadPollution(id: string): void { 
   this.pollutionService.getPollutionById(id).subscribe({
     
-    // Change "data: Pollution" en "data: Pollution | undefined"
     next: (data: Pollution | undefined) => {
-      this.pollution = data; // data peut être 'undefined', et c'est ok
+      this.pollution = data; 
     },
     error: (error: any) => {
       console.error('Erreur lors du chargement de la pollution:', error);
     }
-  }); // <-- La syntaxe est correcte ici
+  }); 
 }
-// ...
 }
